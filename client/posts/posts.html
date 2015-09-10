@@ -1,0 +1,26 @@
+<template name="posts">
+	<div class="row main">
+		<h3>Top Predictions</h3>
+		<h4 class="row nothing-more" style="text-align:center">Nothing to show</h4>
+		{{#each predictions}}
+		<div class="row box">
+			<p class="medium-1 columns"></p>
+			<div class="medium-7 columns">
+				<p class="name">{{title}}</p>
+				<p class="content">{{content}}</p>
+				<p class="content">Posted by :{{author}}</p>
+				<textarea row='4' placeholde="Comment here" name="comment"></textarea> 
+			</div>
+			<div class="medium-4 columns social-login">
+				<div class="fb-share-button" data-href="http://felixcwm.wix.com/psychicmalaysian" data-layout="button"></div>
+			</div>
+		</div>
+		{{/each}}
+		<button class="arrow-prev button"><i class="fa fa-arrow-circle-left"></i>  Prev</button>
+		<button class="arrow-next button">Next  <i class="fa fa-arrow-circle-right"></i></button>
+		<!-- <ul class="pagination" role="menubar" aria-label="Pagination">
+			<li class="arrow-prev"><a href="">&laquo; Previous</a></li>
+			<li class="arrow-next"><a href="">Next &raquo;</a></li>
+		</ul> -->
+	</div>
+</template>

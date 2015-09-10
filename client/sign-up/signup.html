@@ -1,0 +1,18 @@
+<template name="signup">
+	<div id="signUpModal" data-options="close_on_background_click:false" class="reveal-modal tiny" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+		{{> innerSignupModal}}
+	</div>
+</template>
+
+<template name="innerSignupModal">
+	<h2 id="modalTitle" class="center">Please Sign up</h2>
+		<a class="close-reveal-modal" aria-label="Close">&#215;</a>
+		<form class="sign-up-form">
+			<input required type="text" name="username" placeholder="Username"/>
+			<input required type="email" name="email" placeholder="Email Address"/>
+			<input required type="password" name="password" placeholder="Password"/>
+			<span class="label-wrapper  label row"></span>
+			
+			<input type="submit" value="REGISTER" class="button expand success round">
+		</form>
+</template>

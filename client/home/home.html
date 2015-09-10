@@ -1,0 +1,12 @@
+<template name="home">
+	{{> signup}}
+	{{> login}}
+	{{> header}}
+	{{> slider}}
+	<div class="content">
+		{{> Template.dynamic template=posts}}
+		{{> Template.dynamic template=content}}
+	</div>
+	{{> updates}}
+	{{> footer}}
+</template>

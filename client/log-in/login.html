@@ -1,0 +1,16 @@
+<template name="login">
+	<div id="loginModal" data-options="close_on_background_click:false" class="reveal-modal tiny" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+		{{> innerLoginModal}}
+	</div>
+</template>
+
+<template name="innerLoginModal">
+	<h2 class="lead center">Please Log in</h2>
+		<a class="close-reveal-modal" aria-label="Close">&#215;</a>
+		<form class="login-form">
+			<input required type="text" name="username" placeholder="Username"/>
+			<input required type="password" name="password" placeholder="Password"/>
+			<span class="label-wrapper alert label row"></span>
+			<input type="submit" value="LOG IN" class="button expand default round">
+		</form>
+</template>

@@ -1,0 +1,47 @@
+<template name="profile">
+<div class="row profile"> 
+	<div>
+		<nav class="top-bar" data-topbar role="navigation">
+			<ul class="title-area">
+			    <li class="name left">
+			      <a href="#"><h5>PSYMAS</h5></a>
+			    </li>
+	  		</ul>
+	  		<section class="top-bar-section">
+	  			<div class="right log-out-user">
+	  				<ul>
+	  					<li>
+  							<p>Welcome
+  							{{#with userObject}}
+  								{{#with profile}}
+  									{{firstname}}
+								{{/with}}
+  							{{/with}}
+  							</p>
+	  					</li>
+	  					<li><a class="logout-user" href="/home">Logout  <i class="fa fa-sign-out"></i></a></li>
+	  				</ul>
+	  				
+	  			</div>
+	  		</section>
+		</nav>
+	</div>
+	
+	<ul class="side-nav medium-2 columns">
+	  <li class="active"><a href="{{pathForAddPrediction}}"><i class="fa fa-plus"></i>  Add Prediction</a></li>
+	  <li><a href="#"><i class="fa fa-user"></i>  My Profile</a></li>
+	</ul>
+	
+	<div class="medium-10 columns">
+		<div class="row">
+			<div>
+			{{> Template.dynamic template=content}}
+			</div>
+		</div>
+	</div>
+</div>
+</template>
+
+<template name="prediction-list">
+	<h2>List of predictions here</h2>
+</template>

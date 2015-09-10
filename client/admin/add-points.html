@@ -1,0 +1,29 @@
+<template name="addPoints">
+	<!-- TABLE LIST HERE  -->
+  <div class="pending-prediction-wrapper">
+<table style="margin-top:10px">
+  <thead>
+    <tr>
+      <th width="200">Prediction title</th>
+      <th width="300">Prediction content</th>
+      <th width="150">Author</th>
+      <th width="200">Add points</th>
+      <th width="200">Prediction Points</th>
+    </tr>
+  </thead>
+  <tbody>
+  {{#each approvedPredictions}}
+  	<tr>
+      <td>{{title}}</td>
+      <td>{{content}}</td>
+      <td>{{author}}</td>
+      <td><a class="button add-points" predictionid={{_id}} id={{author_id}}><i class="fa fa-plus"></i>  Add Points</a></td>
+      <td>{{points}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+<button class="arrow-prev button">Prev</button>
+<button class="arrow-next button">Next</button>
+</div>
+</template>

@@ -1,0 +1,103 @@
+<template name="admin">
+	<div class="row profile"> 
+	<div>
+		<nav class="top-bar" data-topbar role="navigation">
+			<ul class="title-area">
+			    <li class="name left">
+			      <a href="/admin"><h5>PSYMAS</h5></a>
+			    </li>
+	  		</ul>
+	  		<section class="top-bar-section">
+	  			<div class="right log-out-user">
+	  				<ul>
+	  					<li>
+  							<p>Welcome Admin</p>
+	  					</li>
+	  					<li><a class="log-out-user">Logout  <i class="fa fa-sign-out"></i></a></li>
+	  				</ul>
+	  				
+	  			</div>
+	  		</section>
+		</nav>
+	</div>
+	
+	<ul class="side-nav medium-2 columns">
+	  <li class="active"><a href="{{pathForPendingList}}"><i class="fa fa-exclamation-circle"></i>   Remove Prediction</a></li>
+	  <li><a href="{{pathForAddPoints}}"><i class="fa fa-plus-circle"></i>  Add points</a></li>
+	    <li><a href="{{pathForAddNews}}"><i class="fa fa-newspaper-o"></i>  Add News / Updates</a></li>
+	    <li><a href="{{pathForUsers}}"><i class="fa fa-user"></i>  Users</a></li>
+	</ul>
+	
+	<div class="medium-10 columns">
+		<div class="row">
+			<div>{{> Template.dynamic template=content data=params}}</div>
+		</div>
+	</div>
+</div>
+</template>
+<!-- USERS LIST PAGE -->
+<template name="userslist">
+<div class="pending-prediction-wrapper">
+	<table>
+	  <thead>
+	    <tr>
+	      <th width="200">Username</th>
+	      <th width="150">Email</th>
+	      <th width="150">Points</th>
+	      <th width="200">Level</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	  {{#each users}}
+	  	<tr>
+	      <td>{{username}}</td>
+	      <td>
+	      {{#each emails}}
+		  	{{address}}
+	      {{/each}}
+	      </td>
+	       {{userPoints _id}}
+	       <td>
+	       	{{userLevel _id}}
+	     </td>
+	    </tr>
+     {{/each}}
+	  </tbody>
+	</table>
+
+	</div>
+</template>
+<!-- HOME ADMIN -->
+<template name="adminHome">
+		<h2>Admin Home</h2>
+</template>
+<!-- REMOVE PREDICTION -->
+<template name="removePredictionList">
+	<div class="pending-prediction-wrapper">
+
+	<table>
+	  <thead>
+	    <tr>
+	      <th width="200">Prediction title</th>
+	      <th width="150">Author</th>
+	      <th width="150">Created at</th>
+	      <th width="200">Prediction Status</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	  {{#each predictionList}}
+	  	<tr>
+	      <td>{{title}}</td>
+	      <td>{{author}}</td>
+	       <td>{{createdAt}}</td>
+	      <td>
+      		<a id={{_id}}  class="pending-prediction button alert"><i class="fa fa-minus-circle"></i>  Remove</a>
+	      </td>
+	    </tr>
+     {{/each}}
+	  </tbody>
+	</table>
+	<button class="arrow-prev button">Prev</button>
+	<button class="arrow-next button">Next</button>
+	</div>
+</template>
